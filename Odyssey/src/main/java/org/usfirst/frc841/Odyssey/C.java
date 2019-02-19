@@ -30,5 +30,8 @@ public class C {
 	//public static int nAutonomousMode = 0;
 	
 	
-	
+	//Hatch Elbow Constatns;
+	public static final double h_p =0;
+	public static final double h_i =0;
+	public static final double h_d =0;
 }
