@@ -31,7 +31,7 @@ public class C {
 	
 	
 	//Hatch Elbow Constatns;
-	public static final double h_p =0;
-	public static final double h_i =0;
-	public static final double h_d =0;
+	public static final double h_p =0.0009;
+	public static final double h_i = 0;
+	public static final double h_d =0.00022;
 }
