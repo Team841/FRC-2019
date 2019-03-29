@@ -34,4 +34,11 @@ public class C {
 	public static final double h_p =0.0009;
 	public static final double h_i = 0;
 	public static final double h_d =0.00022;
+
+	//Elevator Constants
+	public static final double e_p = 0;
+	public static final double e_i = 0;
+	public static final double e_d = 0;
+	public static final double e_limitMinus = -.4;
+	public static final double e_limitPlus = .4;
 }
