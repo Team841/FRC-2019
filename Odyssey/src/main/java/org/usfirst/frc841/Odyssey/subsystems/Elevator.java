@@ -89,12 +89,20 @@ public class Elevator extends Subsystem {
         this.elevator2.set(.4);
     }
 
-    public void elbowDown() {
-        this.elevator1.set(-.4);
-        this.elevator2.set(-.4);
+    public void elevatorDown() {
+        if (this.limitBottom.get())
+        {
+            this.elevator1.set(-.4);
+            this.elevator2.set(-.4);
+        }
+        else
+        {
+            this.elevator1.set(0);
+            this.elevator2.set(0);
+        }
     }
 
-    public void elbowStop() {
+    public void elevatorStop() {
         this.elevator1.set(0);
         this.elevator2.set(0);
     }
