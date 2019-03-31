@@ -60,7 +60,6 @@ public class OI {
     public JoystickButton closeGrabber5;
     public JoystickButton outArmBrace8;
     public JoystickButton inArmBrace7;
-    public JoystickButton centerArmBrace2;
     public JoystickButton succBall;
     public JoystickButton spootBall;
     public JoystickButton hatchFrontEnable;
@@ -88,9 +87,9 @@ public class OI {
         elevatorUpDisable.whenReleased(new elevatorStop());
         elevatorUpEnable = new JoystickButton(coDriver, 8);
         elevatorUpEnable.whenPressed(new elevatorUp());
-        hatchBackDisable = new JoystickButton(coDriver, 4);
+        hatchBackDisable = new JoystickButton(coDriver, 1);
         hatchBackDisable.whenReleased(new elbowStop());
-        hatchBackEnable = new JoystickButton(coDriver, 4);
+        hatchBackEnable = new JoystickButton(coDriver, 1);
         hatchBackEnable.whenPressed(new elbowDown());
         hatchFrontDisable = new JoystickButton(coDriver, 2);
         hatchFrontDisable.whenReleased(new elbowStop());
@@ -100,14 +99,12 @@ public class OI {
         spootBall.whenPressed(new releaseCargo());
         succBall = new JoystickButton(coDriver, 3);
         succBall.whenPressed(new intakeCargo());
-        centerArmBrace2 = new JoystickButton(coDriver, 2);
-        centerArmBrace2.whenPressed(new SetHatchElbow(3000));
         inArmBrace7 = new JoystickButton(coDriver, 7);
         inArmBrace7.whenPressed(new SetArmBrace(false));
         outArmBrace8 = new JoystickButton(coDriver, 8);
         outArmBrace8.whenPressed(new SetArmBrace(true));
         closeGrabber5 = new JoystickButton(coDriver, 5);
-        closeGrabber5.whenPressed(new SetGrabber(true));
+        closeGrabber5.whenPressed(new SetGrabber(true)); 
         openGrabber6 = new JoystickButton(coDriver, 6);
         openGrabber6.whenPressed(new SetGrabber(false));
         driver = new Joystick(0);
