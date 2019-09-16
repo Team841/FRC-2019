@@ -79,11 +79,11 @@ public class Hatch extends Subsystem {
     }
 
     public void elbowUp() {
-        this.elbow.set(.4);
+        this.elbow.set(1);
     }
 
     public void elbowDown() {
-        this.elbow.set(-.4);
+        this.elbow.set(-1);
     }
 
     public void elbowStop() {
