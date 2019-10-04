@@ -198,6 +198,28 @@ Children:
   - Children:
     - Children: []
       Properties:
+        Input Channel (Digital): !!robotbuilder.data.properties.ChoicesProperty
+          choices: &id012 ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10',
+            '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22',
+            '23', '24', '25']
+          default: '0'
+          name: Input Channel (Digital)
+          validators: &id013 [DigitalChannel]
+          value: '3'
+      Base: Limit Switch
+      Name: upperlimit
+    - Children: []
+      Properties:
+        Input Channel (Digital): !!robotbuilder.data.properties.ChoicesProperty
+          choices: *id012
+          default: '0'
+          name: Input Channel (Digital)
+          validators: *id013
+          value: '6'
+      Base: Limit Switch
+      Name: lowerlimit
+    - Children: []
+      Properties:
         CAN ID: !!robotbuilder.data.properties.ChoicesProperty
           choices: *id003
           default: '2'
@@ -206,18 +228,6 @@ Children:
           value: '11'
       Base: Talon SRX
       Name: elevator1
-    - Children: []
-      Properties:
-        Input Channel (Digital): !!robotbuilder.data.properties.ChoicesProperty
-          choices: &id012 ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10',
-            '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22',
-            '23', '24', '25']
-          default: '0'
-          name: Input Channel (Digital)
-          validators: &id013 [DigitalChannel]
-          value: '1'
-      Base: Limit Switch
-      Name: LimitBottom
     - Children: []
       Properties:
         CAN ID: !!robotbuilder.data.properties.ChoicesProperty
