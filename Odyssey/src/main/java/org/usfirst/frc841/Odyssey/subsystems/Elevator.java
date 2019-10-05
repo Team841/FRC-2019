@@ -90,8 +90,21 @@ public class Elevator extends Subsystem {
     }
 
     public void elevatorUp() {
-        this.elevator1.set(1);
-        this.elevator2.set(1);
+	    
+	if (this.upperlimit.get()) // If the upper limit switch is reached, turn of both motors.
+        {
+            this.elevator1.set(1);
+            this.elevator2.set(1);
+        }
+        else
+        {
+            this.elevator1.set(0);
+            this.elevator2.set(0);
+        }  
+	    
+	// Old code, does not check for the limit switch    
+        //this.elevator1.set(1);
+        //this.elevator2.set(1);
     }
 
     public void elevatorDown() {
