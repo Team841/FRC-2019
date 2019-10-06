@@ -79,11 +79,11 @@ public class Hatch extends Subsystem {
     }
 
     public void elbowUp() {
-        this.elbow.set(1);
+        this.elbow.set(0.75); //originally was 1. Speed reduced to 75%
     }
 
     public void elbowDown() {
-        this.elbow.set(-1);
+        this.elbow.set(-0.75); //originally was -1. Speed reduced to 75%
     }
 
     public void elbowStop() {
