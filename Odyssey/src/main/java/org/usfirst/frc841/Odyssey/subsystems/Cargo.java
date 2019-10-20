@@ -82,7 +82,7 @@ public class Cargo extends Subsystem {
     }
 
     public void spootOut() {
-        this.intakeMotor.set(-1);
+        this.intakeMotor.set(-0.8);
     }
     public void stopIt() {
         this.intakeMotor.set(0); 
