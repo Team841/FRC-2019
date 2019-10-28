@@ -102,7 +102,7 @@ public class OI {
         hatchFrontEnable = new JoystickButton(coDriver, 2);
         hatchFrontEnable.whenPressed(new elbowUp());
         spootBall = new JoystickButton(coDriver, 4);
-        spootBall.whenPressed(new releaseCargo());
+        spootBall.whenReleased(new releaseCargo());
         succBall = new JoystickButton(coDriver, 3);
         succBall.whenPressed(new intakeCargo());
         inArmBrace7 = new JoystickButton(coDriver, 7);
