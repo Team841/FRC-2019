@@ -136,7 +136,6 @@ public class DriveTrain extends Subsystem {
         // Note quickturn and shift is taken care of with buttons in OI.
         // Put code here to be run every loop
 
-
         if (vision >= 1){
             if (x > 3){
                rightLed.set(1);
@@ -170,6 +169,8 @@ public class DriveTrain extends Subsystem {
     private double oldWheel = 0.0;
     private double quickStopAccumulator = 0;
     private boolean isQuickTurn = false;
+
+
 
     /**
      * Enable quick turn AKA classical Arcade drive
@@ -401,4 +402,39 @@ public class DriveTrain extends Subsystem {
         return stick.getZ();
     }
 
+    /**
+     * This method takes in the camera value and directs the drive to turn in the direction to center it.
+     * It uses the same method as the signal lights
+     * TODO: Research whether we need 2nd NetworkTableInstance here??
+     */
+    public void TurnToTarget() {
+
+        NetworkTable table = NetworkTableInstance.getDefault().getTable("limelight");
+        NetworkTableEntry tx = table.getEntry("tx");
+//        NetworkTableEntry ty = table.getEntry("ty");
+//        NetworkTableEntry ta = table.getEntry("ta");
+        NetworkTableEntry tv = table.getEntry("tv");
+       
+        // read  values periodically
+        double x = tx.getDouble(0.0);
+//        double y = ty.getDouble(0.0);
+//        double area = ta.getDouble(0.0);
+        double vision = tv.getDouble(0.0);
+
+
+        if (vision >= 1){
+            if (x > 3){
+                SetLeftRight(.3,.3); //TODO: is this the correct direction?
+            }
+            else if (x <= -3){
+                SetLeftRight(-.3,-.3); //TODO: is this the correct direction?
+            }
+            else {
+//if pointed at target, do nothing
+            }
+        }
+        else{
+            //if no target visible, do nothing
+        }
+    }
 }
