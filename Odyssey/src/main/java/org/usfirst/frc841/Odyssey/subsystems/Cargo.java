@@ -82,9 +82,9 @@ public class Cargo extends Subsystem {
     }
 
     public void spootOut() {
-        for (int i = 0; i<100; i++) {
-            this.intakeMotor.set(-0.8);
-        }
+        //for (int i = 0; i<100; i++) {
+        this.intakeMotor.set(-0.8);
+        //}
     }
     
     public void stopIt() {

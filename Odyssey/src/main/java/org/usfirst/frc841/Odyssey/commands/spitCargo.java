@@ -40,6 +40,8 @@ public class spitCargo extends Command {
     @Override
     protected void initialize() {
         Robot.cargo.spootOut();
+        setTimeout(1); // spit it for 1 sec.
+        Robot.cargo.stopIt();
     }
 
     // Called repeatedly when this Command is scheduled to run
