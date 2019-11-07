@@ -129,44 +129,24 @@ public class DriveTrain extends Subsystem {
         // Update values of the table
         table = NetworkTableInstance.getDefault().getTable("limelight");
         tx = table.getEntry("tx");
-        
+        tv = table.getEntry("tv");
+
     //    NetworkTableEntry ty = table.getEntry("ty");
       //  NetworkTableEntry ta = table.getEntry("ta");
-        NetworkTableEntry tv = table.getEntry("tv");
-       
+               
          // read  values periodically
-          double x = tx.getDouble(0.0);
-  //      double y = ty.getDouble(0.0);
-    //    double area = ta.getDouble(0.0);
+        double x = tx.getDouble(0.0);
+        double y = ty.getDouble(0.0);
+        double area = ta.getDouble(0.0);
         double vision = tv.getDouble(0.0);
 
         //post to smart dashboard periodically
-          SmartDashboard.putNumber("LimelightX", x);
-  //      SmartDashboard.putNumber("LimelightY", y);
-    //    SmartDashboard.putNumber("LimelightArea", area);
+        SmartDashboard.putNumber("LimelightX", x);
+        SmartDashboard.putNumber("LimelightY", y);
+        SmartDashboard.putNumber("LimelightArea", area);
         SmartDashboard.putNumber("LimelightVision", vision);
         // Note quickturn and shift is taken care of with buttons in OI.
         // Put code here to be run every loop
-
-        if (vision >= 1){
-            if (x > 3){
-               rightLed.set(1);
-               leftLed.set(0); 
-            }
-            else if (x <= -3){
-                rightLed.set(0);
-                leftLed.set(1);
-            }
-            else {
-                rightLed.set(1);
-                leftLed.set(1);
-            }
-        }
-        else{
-            //SET Left Right LED's To off
-            leftLed.set(0);
-            rightLed.set(0);
-        }
 
     }
 
@@ -422,10 +402,10 @@ public class DriveTrain extends Subsystem {
     public void TurnToTarget() {
 
 //        NetworkTable table = NetworkTableInstance.getDefault().getTable("limelight");
-        NetworkTableEntry tx = table.getEntry("tx");
+        tx = table.getEntry("tx");
 //        NetworkTableEntry ty = table.getEntry("ty");
 //        NetworkTableEntry ta = table.getEntry("ta");
-        NetworkTableEntry tv = table.getEntry("tv");
+        tv = table.getEntry("tv");
        
         // read  values periodically
         double x = tx.getDouble(0.0);
@@ -444,11 +424,9 @@ public class DriveTrain extends Subsystem {
                 SetLeftRight(-.3,-.3); //TODO: is this the correct direction?
             }
             else {
-//if pointed at target, do nothing
+                //if pointed at target, do nothing
             }
         }
-        else{
-            //if no target visible, do nothing
-        }
+
     }
 }
