@@ -410,19 +410,21 @@ public class DriveTrain extends Subsystem {
     /**
      * This method takes in the camera value and directs the drive to turn in the direction to center it.
      * It uses the same method as the signal lights
-     * TODO: Research whether we need 2nd NetworkTableInstance here??
+     * 
      */
     public void TurnToTarget() {
 
         SmartDashboard.putNumber("LimelightXPTT", this.x);
         SmartDashboard.putNumber("LimelightVPTT", this.v);
 
+//Should we fetch the Limelight Area value and try to use that to adjust the deadband dynamically? 
+
         if (this.v >= 1){
-            if (this.x > 3){
-                SetLeftRight(.3,.3); //TODO: is this the correct direction?
+            if (this.x > C.turnTargDeadband){
+                SetLeftRight(C.turnTargRate,C.turnTargRate); 
             }
-            else if (this.x <= -3){
-                SetLeftRight(-.3,-.3); //TODO: is this the correct direction?
+            else if (this.x <= C.turnTargDeadband){
+                SetLeftRight(-C.turnTargRate,-C.turnTargRate); 
             }
             else {
                 //if pointed at target, do nothing
