@@ -21,6 +21,10 @@ public class C {
 	public static final double centervalue = 140;
 	public static final double tolerance = 10;
 	public static final int currentlimit = 40;
+
+	// Turn to Target constants (used in drive)
+	public static final double turnTargDeadband = 3; //double from >0 to ?? 
+	public static final double turnTargRate = 0.3; //double from 0 to 1, sets drive strength in bang-bang control mode
 	
 	// AUTONOMOUS CONSTANTS
 	public static final double autoDrivingDistance = .5; // In time, is seconds driving from the starting point to one of the nodes of movement in the autonomous mode.
